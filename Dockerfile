@@ -1,5 +1,5 @@
 #cd into folder containing the output of the gerb274x-gerbm.cam file from EagleCAD
-#docker run -it --rm -v $PWD/:/app/gerber schmorrison/gerbmerge_dockerfile
+#docker run -it --rm -v $PWD/:/app/gerber schmorrison/gerbmerge_dockerfile sh -c --full-search /app/gerber/layout.cfg
 
 FROM alpine:3.3
 
@@ -28,5 +28,5 @@ RUN pip install SimpleParse \
 	&& python setup.py install
 	
 
-ENTRYPOINT ["/usr/bin/gerbmerge"]
-CMD ["--full-search", "/app/gerber/MyLayout.cfg"]
+#ENTRYPOINT ["/usr/bin/gerbmerge"]
+#CMD ["--full-search", "/app/gerber/MyLayout.cfg"]
