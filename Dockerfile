@@ -25,5 +25,8 @@ RUN pip install SimpleParse \
 
 ADD layout.cfg /app/gerber/layout.cfg
 
+RUN ls /app \
+	&& ls /app/gerber 
+
 ENTRYPOINT ["/usr/bin/gerbmerge"]
 CMD ["/app/gerber/layout.cfg"]
